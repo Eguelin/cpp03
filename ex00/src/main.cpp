@@ -6,13 +6,13 @@
 /*   By: eguelin <eguelin@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 15:00:26 by eguelin           #+#    #+#             */
-/*   Updated: 2023/11/16 19:09:44 by eguelin          ###   ########lyon.fr   */
+/*   Updated: 2023/11/20 18:16:37 by eguelin          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-int main( void )
+int	main( void )
 {
 	ClapTrap	gura;
 	ClapTrap	amelia("\033[0;33m\033[1mAmelia\033[0;0m");
@@ -20,6 +20,9 @@ int main( void )
 	ClapTrap	kiara(amelia);
 
 	std::cout << std::endl << "|------------- print -------------|" << std::endl;
+
+	caliope.attack(gura.get_name());
+
 	std::cout << "caliope:" << std::endl << caliope << std::endl;
 
 	caliope = gura;
@@ -41,15 +44,8 @@ int main( void )
 
 	std::cout << std::endl << amelia << std::endl;
 
-	gura.attack(amelia.get_name());
-	gura.attack(amelia.get_name());
-	gura.attack(amelia.get_name());
-	gura.attack(amelia.get_name());
-	gura.attack(amelia.get_name());
-	gura.attack(amelia.get_name());
-	gura.attack(amelia.get_name());
-	gura.attack(amelia.get_name());
-	gura.attack(amelia.get_name());
+	while (gura.get_energy_points())
+		gura.attack(amelia.get_name());
 	gura.attack(amelia.get_name());
 
 	std::cout << std::endl << gura << std::endl;

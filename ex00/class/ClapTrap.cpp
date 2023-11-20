@@ -6,13 +6,11 @@
 /*   By: eguelin <eguelin@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 15:00:21 by eguelin           #+#    #+#             */
-/*   Updated: 2023/11/16 19:07:54 by eguelin          ###   ########lyon.fr   */
+/*   Updated: 2023/11/20 18:45:13 by eguelin          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
-
-static int	ft_claptrap_can( const ClapTrap &claptrap );
 
 ClapTrap::ClapTrap( void ): _name("\033[0;34m\033[1mGura\033[0;0m"), _hit_points(10), _energy_points(10), _attack_damage(0)
 {
@@ -26,12 +24,9 @@ ClapTrap::ClapTrap( std::string name ): _hit_points(10), _energy_points(10), _at
 	std::cout << "ClapTrap " << ClapTrap::_name << " is created!" << std::endl;
 }
 
-ClapTrap::ClapTrap( const ClapTrap &claptrap )
+ClapTrap::ClapTrap( const ClapTrap &src )
 {
-	ClapTrap::_name = claptrap._name;
-	ClapTrap::_hit_points = claptrap._hit_points;
-	ClapTrap::_energy_points = claptrap._energy_points;
-	ClapTrap::_attack_damage = claptrap._attack_damage;
+	*this = src;
 
 	std::cout << "The copy of ClapTrap " << ClapTrap::_name << " is created!" << std::endl;
 }
@@ -41,12 +36,12 @@ ClapTrap::~ClapTrap( void )
 	std::cout << "ClapTrap " << ClapTrap::_name << " is destroy!" << std::endl;
 }
 
-ClapTrap	&ClapTrap::operator=( const ClapTrap &claptrap)
+ClapTrap	&ClapTrap::operator=( const ClapTrap &src)
 {
-	ClapTrap::_name = claptrap._name;
-	ClapTrap::_hit_points = claptrap._hit_points;
-	ClapTrap::_energy_points = claptrap._energy_points;
-	ClapTrap::_attack_damage = claptrap._attack_damage;
+	ClapTrap::_name = src._name;
+	ClapTrap::_hit_points = src._hit_points;
+	ClapTrap::_energy_points = src._energy_points;
+	ClapTrap::_attack_damage = src._attack_damage;
 
 	return (*this);
 }
@@ -73,7 +68,7 @@ int	ClapTrap::get_attack_damage( void ) const
 
 void	ClapTrap::attack( const std::string &target )
 {
-	if (ft_claptrap_can(*this))
+	if (check_claptrap(*this))
 		return ;
 
 	ClapTrap::_energy_points--;
@@ -84,7 +79,7 @@ void	ClapTrap::attack( const std::string &target )
 
 void	ClapTrap::takeDamage( unsigned int amount )
 {
-	if (ft_claptrap_can(*this))
+	if (check_claptrap(*this))
 		return ;
 
 	ClapTrap::_hit_points -= amount;
@@ -98,7 +93,7 @@ void	ClapTrap::takeDamage( unsigned int amount )
 
 void	ClapTrap::beRepaired( unsigned int amount )
 {
-	if (ft_claptrap_can(*this))
+	if (check_claptrap(*this))
 		return ;
 
 	ClapTrap::_hit_points += amount;
@@ -108,30 +103,30 @@ void	ClapTrap::beRepaired( unsigned int amount )
 	" be repaired " << amount << " hit points!" << std::endl;
 }
 
-std::ostream	&operator<<( std::ostream &o, const ClapTrap &claptrap )
+int	ClapTrap::check_claptrap( const ClapTrap &src )
 {
-	o << "Name = " << claptrap.get_name() << std::endl \
-	<< "Hit_points = " << claptrap.get_hit_points() << std::endl \
-	<< "Energy_points = " << claptrap.get_energy_points() << std::endl \
-	<< "Attack_damag = " << claptrap.get_attack_damage() << std::endl;
-
-	return (o);
-}
-
-static int	ft_claptrap_can( const ClapTrap &claptrap )
-{
-	if (!claptrap.get_hit_points())
+	if (!src.get_hit_points())
 	{
-		std::cout << "ClapTrap " << claptrap.get_name() << " is dead!" << std::endl;
+		std::cout << "ClapTrap " << src.get_name() << " is dead!" << std::endl;
 
 		return (1);
 	}
-	else if (!claptrap.get_energy_points())
+	else if (!src.get_energy_points())
 	{
-		std::cout << "ClapTrap " << claptrap.get_name() << " is out of energy!" << std::endl;
+		std::cout << "ClapTrap " << src.get_name() << " is out of energy!" << std::endl;
 
 		return (1);
 	}
 
 	return (0);
+}
+
+std::ostream	&operator<<( std::ostream &o, const ClapTrap &src )
+{
+	o << "Name = " << src.get_name() << std::endl \
+	<< "Hit_points = " << src.get_hit_points() << std::endl \
+	<< "Energy_points = " << src.get_energy_points() << std::endl \
+	<< "Attack_damag = " << src.get_attack_damage() << std::endl;
+
+	return (o);
 }
