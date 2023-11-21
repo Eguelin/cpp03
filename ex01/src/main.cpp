@@ -6,7 +6,7 @@
 /*   By: eguelin <eguelin@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 15:00:26 by eguelin           #+#    #+#             */
-/*   Updated: 2023/11/20 18:13:53 by eguelin          ###   ########lyon.fr   */
+/*   Updated: 2023/11/21 14:55:33 by eguelin          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,12 @@ int	main( void )
 
 	caliope.attack(gura.get_name());
 
-	std::cout << "caliope:" << std::endl << caliope << std::endl;
+	std::cout << std::endl << "\033[0;90m\033[1mCaliope\033[0;0m:" << std::endl << caliope << std::endl;
 
 	caliope = gura;
 
-	std::cout << "caliope:" << std::endl << caliope << std::endl;
-	std::cout << "kiara:" << std::endl << kiara << std::endl;
+	std::cout << "\033[0;90m\033[1mCaliope\033[0;0m:" << std::endl << caliope << std::endl;
+	std::cout << "\033[0;31m\033[1mkiara\033[0;0m:" << std::endl << kiara << std::endl;
 
 	caliope.guardGate();
 
@@ -39,11 +39,11 @@ int	main( void )
 
 	std::cout << std::endl << gura << std::endl;
 
-	amelia.takeDamage( 20 );
+	amelia.takeDamage(1);
 
 	std::cout << std::endl << amelia << std::endl;
 
-	amelia.beRepaired( 4 );
+	amelia.beRepaired(4);
 
 	std::cout << std::endl << amelia << std::endl;
 
@@ -54,13 +54,13 @@ int	main( void )
 
 	std::cout << std::endl << gura << std::endl;
 
-	amelia.takeDamage( 1000 );
-	amelia.beRepaired( 4 );
+	amelia.takeDamage(100);
+	amelia.beRepaired(4);
 	amelia.guardGate();
 
-	std::cout << std::endl << amelia << std::endl;
+	std::cout << std::endl << amelia;
 
 	std::cout  << "|--------------------------------|" << std::endl << std::endl;
 
-	return 0;
+	return (0);
 }
