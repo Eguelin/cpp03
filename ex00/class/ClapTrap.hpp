@@ -6,7 +6,7 @@
 /*   By: eguelin <eguelin@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 15:00:24 by eguelin           #+#    #+#             */
-/*   Updated: 2023/11/20 18:45:22 by eguelin          ###   ########lyon.fr   */
+/*   Updated: 2023/11/21 14:21:54 by eguelin          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class ClapTrap
 		int			get_hit_points( void ) const;
 		int			get_energy_points( void ) const;
 		int			get_attack_damage( void ) const;
-		int			check_claptrap( const ClapTrap &src );
+		int			check_claptrap( void ) const;
 
 		void	attack( const std::string &target );
 		void	takeDamage( unsigned int amount );
