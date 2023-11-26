@@ -6,30 +6,34 @@
 /*   By: eguelin <eguelin@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 15:00:26 by eguelin           #+#    #+#             */
-/*   Updated: 2023/11/21 17:26:22 by eguelin          ###   ########lyon.fr   */
+/*   Updated: 2023/11/26 15:05:31 by eguelin          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
 
+#define BBLACK_T "\033[1;30m"
+#define BRED_T "\033[1;31m"
+#define BYELLOW_T "\033[1;33m"
+
 int	main( void )
 {
 	FragTrap	gura;
-	FragTrap	amelia("\033[0;33m\033[1mAmelia\033[0;0m");
-	FragTrap	caliope("\033[0;90m\033[1mCaliope\033[0;0m");
+	FragTrap	amelia(BYELLOW_T "Amelia" RESET_T);
+	FragTrap	caliope(BBLACK_T "Caliope" RESET_T);
 	FragTrap	kiara(amelia);
 
 	std::cout << std::endl << "|------------- print -------------|" << std::endl;
 
 	caliope.attack(gura.get_name());
 
-	std::cout << std::endl << "\033[0;90m\033[1mCaliope\033[0;0m:" << std::endl << caliope << std::endl;
+	std::cout << std::endl << BBLACK_T << "Caliope" << RESET_T << std::endl << caliope << std::endl;
 
 	caliope = gura;
 
-	std::cout << "\033[0;90m\033[1mCaliope\033[0;0m:" << std::endl << caliope << std::endl;
-	std::cout << "\033[0;31m\033[1mkiara\033[0;0m:" << std::endl << kiara << std::endl;
+	std::cout << BBLACK_T << "Caliope" << RESET_T << std::endl << caliope << std::endl;
+	std::cout << BRED_T << "kiara" << RESET_T << std::endl << kiara;
 
 	caliope.highFivesGuys();
 
