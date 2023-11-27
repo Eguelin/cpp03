@@ -6,7 +6,7 @@
 /*   By: eguelin <eguelin@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 15:17:20 by eguelin           #+#    #+#             */
-/*   Updated: 2023/11/26 16:41:09 by eguelin          ###   ########lyon.fr   */
+/*   Updated: 2023/11/27 16:00:33 by eguelin          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ DiamondTrap::~DiamondTrap( void )
 }
 
 /* ************************************************************************** */
-/*                            Operator overloading                            */
+/*                              Operator overload                             */
 /* ************************************************************************** */
 
 DiamondTrap	&DiamondTrap::operator=( const DiamondTrap &src )

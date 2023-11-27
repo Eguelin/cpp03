@@ -6,7 +6,7 @@
 /*   By: eguelin <eguelin@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 15:00:21 by eguelin           #+#    #+#             */
-/*   Updated: 2023/11/26 15:07:57 by eguelin          ###   ########lyon.fr   */
+/*   Updated: 2023/11/27 16:00:33 by eguelin          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ ClapTrap::~ClapTrap( void )
 }
 
 /* ************************************************************************** */
-/*                            Operator overloading                            */
+/*                              Operator overload                             */
 /* ************************************************************************** */
 
 ClapTrap	&ClapTrap::operator=( const ClapTrap &src)
@@ -123,7 +123,7 @@ void	ClapTrap::beRepaired( unsigned int amount )
 }
 
 /* ************************************************************************** */
-/*                               Printf overload                              */
+/*                               Print overload                               */
 /* ************************************************************************** */
 
 std::ostream	&operator<<( std::ostream &o, const ClapTrap &src )
