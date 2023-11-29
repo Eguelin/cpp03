@@ -6,7 +6,7 @@
 /*   By: eguelin <eguelin@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 15:00:26 by eguelin           #+#    #+#             */
-/*   Updated: 2023/11/26 15:05:31 by eguelin          ###   ########lyon.fr   */
+/*   Updated: 2023/11/29 13:50:49 by eguelin          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,20 +20,20 @@
 int	main( void )
 {
 	FragTrap	gura;
-	FragTrap	amelia(BYELLOW_T "Amelia" RESET_T);
-	FragTrap	caliope(BBLACK_T "Caliope" RESET_T);
+	FragTrap	amelia(BYELLOW_T "Amelia" DEFAULT_T);
+	FragTrap	caliope(BBLACK_T "Caliope" DEFAULT_T);
 	FragTrap	kiara(amelia);
 
 	std::cout << std::endl << "|------------- print -------------|" << std::endl;
 
 	caliope.attack(gura.get_name());
 
-	std::cout << std::endl << BBLACK_T << "Caliope" << RESET_T << std::endl << caliope << std::endl;
+	std::cout << std::endl << BBLACK_T << "Caliope" << DEFAULT_T << std::endl << caliope << std::endl;
 
 	caliope = gura;
 
-	std::cout << BBLACK_T << "Caliope" << RESET_T << std::endl << caliope << std::endl;
-	std::cout << BRED_T << "kiara" << RESET_T << std::endl << kiara;
+	std::cout << BBLACK_T << "Caliope" << DEFAULT_T << std::endl << caliope << std::endl;
+	std::cout << BRED_T << "kiara" << DEFAULT_T << std::endl << kiara;
 
 	caliope.highFivesGuys();
 

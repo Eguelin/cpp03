@@ -6,7 +6,7 @@
 /*   By: eguelin <eguelin@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 15:00:21 by eguelin           #+#    #+#             */
-/*   Updated: 2023/11/27 16:00:33 by eguelin          ###   ########lyon.fr   */
+/*   Updated: 2023/11/29 13:50:49 by eguelin          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 /*                         Constructors & Destructors                         */
 /* ************************************************************************** */
 
-ClapTrap::ClapTrap( void ): _name(BBLUE_T "Gura" RESET_T), _hit_points(10), _energy_points(10), _attack_damage(0)
+ClapTrap::ClapTrap( void ): _name(BBLUE_T "Gura" DEFAULT_T), _hit_points(10), _energy_points(10), _attack_damage(0)
 {
 	std::cout << "ClapTrap " << this->_name << " is created!" << std::endl;
 }

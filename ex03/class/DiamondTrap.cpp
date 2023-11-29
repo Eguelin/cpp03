@@ -6,7 +6,7 @@
 /*   By: eguelin <eguelin@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 15:17:20 by eguelin           #+#    #+#             */
-/*   Updated: 2023/11/27 16:00:33 by eguelin          ###   ########lyon.fr   */
+/*   Updated: 2023/11/29 13:50:49 by eguelin          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 /*                         Constructors & Destructors                         */
 /* ************************************************************************** */
 
-DiamondTrap::DiamondTrap( void ): ClapTrap( BBLUE_T "Gura" RESET_T "_clap_name"), _name(BBLUE_T "Gura" RESET_T)
+DiamondTrap::DiamondTrap( void ): ClapTrap( BBLUE_T "Gura" DEFAULT_T "_clap_name"), _name(BBLUE_T "Gura" DEFAULT_T)
 {
 	this->_hit_points = this->FragTrap::get_start_hit_points();
 	this->_energy_points = this->ScavTrap::get_start_energy_points();

@@ -6,7 +6,7 @@
 /*   By: eguelin <eguelin@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 15:00:24 by eguelin           #+#    #+#             */
-/*   Updated: 2023/11/26 15:04:11 by eguelin          ###   ########lyon.fr   */
+/*   Updated: 2023/11/29 13:50:49 by eguelin          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <iostream>
 
-# define RESET_T "\033[0m"
+# define DEFAULT_T "\033[0m"
 # define BBLUE_T "\033[1;34m"
 
 class ClapTrap
